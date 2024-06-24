@@ -1,4 +1,10 @@
-body, input {
+:root {
+    --star-size: 20px;
+    --star-background: #fc0;
+}
+
+body,
+input {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -27,9 +33,11 @@ body, input {
     margin: 20px;
     background-color: #fff;
     display: flex;
-    max-height: 100%;
     flex-direction: column;
+    justify-content: space-between;
     box-sizing: border-box;
+    position: relative;
+    height: calc(100% - 40px);
 }
 
 .catalog__item-content-upper {
@@ -52,6 +60,7 @@ body, input {
     justify-content: flex-end;
     row-gap: 10px;
     max-width: 100%;
+    transition: all 0.3s ease;
     max-height: 100%;
 }
 
@@ -72,11 +81,10 @@ body, input {
 
 .catalog__item-cart-button {
     padding: 10px;
-    margin: 0 auto;
+    margin: auto;
     background-color: #62a2d2;
+    color: #fff;
     display: none;
-    position: relative;
-    bottom: 10px;
     border: none;
     max-width: calc(100% - 40px);
     overflow: hidden;
@@ -90,7 +98,76 @@ body, input {
     opacity: 1;
 }
 
+.catalog__item-cart-button:hover {
+    background-color: #5b92bc;
+}
+
 .catalog__item:hover .catalog__item-caption {
-    margin-top: 14px;
-    transition: translateY(-10%);
+    transition: translateY(-5%);
+    margin-top: auto;
+}
+
+.catalog__item:hover .catalog__item-content {
+    height: calc(90% - 40px);
+}
+
+.catalog__item-content-icons {
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 6px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.catalog__item:hover .catalog__item-content-icons {
+    visibility: visible;
+}
+
+.catalog__item-content-icon {
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.catalog__item-content-icon:hover {
+    background-color: #989e99;
+}
+
+.catalog__item-content-icon_active {
+    background-color: #62a2d2;
+    color: #fff;
+}
+
+.catalog__item-content-icon_active:hover {
+    background-color: #005ce6;
+    color: #fff;
+}
+
+.catalog__item-rating-stars {
+    --percent: calc(var(--rating) / 5 * 100%);
+    display: block;
+    font-size: var(--star-size);
+    line-height: 1;
+    width: fit-content;
+    position: relative;
+    margin: 0 auto;
+}
+
+.catalog__item-rating-stars::before {
+    content: '★★★★★';
+    background:
+        linear-gradient(90deg, var(--star-background) 0%, var(--star-background) var(--percent), #989e99 var(--percent), #989e99 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    position: absolute;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
 }
