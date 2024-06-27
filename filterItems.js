@@ -4,6 +4,30 @@ let comparedItems = [];
 let showHidden = false;
 let activeButton;
 
+window.addEventListener('load', () => {
+    document.getElementById("showHidden").checked = false
+    if (localStorage.hiddenItems !== undefined) {
+        hiddenItems = JSON.parse(localStorage.hiddenItems);
+        activateIcons(hiddenItems, '.catalog__item-content-icon-visibility', true);
+    }
+
+    if (localStorage.favouriteItems !== undefined) {
+        favouriteItems = JSON.parse(localStorage.favouriteItems);
+        activateIcons(favouriteItems, '.catalog__item-content-icon-favourites');
+    }
+
+    if (localStorage.comparedItems !== undefined) {
+        comparedItems = JSON.parse(localStorage.comparedItems);
+        activateIcons(comparedItems, '.catalog__item-content-icon-comparison');
+    }
+});
+
+window.addEventListener('unload', () => {
+    localStorage.setItem('hiddenItems', JSON.stringify(hiddenItems));
+    localStorage.setItem('favouriteItems', JSON.stringify(favouriteItems));
+    localStorage.setItem('comparedItems', JSON.stringify(comparedItems));
+});
+
 let checkbox = document.getElementById('showHidden');
 checkbox.addEventListener('change', function () {
     showHidden = this.checked;
@@ -18,15 +42,7 @@ visibilityIcons.forEach(function (icon) {
 
         toggleIcon(_target, hiddenItems, [_target, _target.children[0]], catalogItem.id);
 
-        if (catalogItem.classList.contains('catalog__item_opaque')) {
-            catalogItem.classList.remove('catalog__item_opaque');
-        } else {
-            catalogItem.classList.add('catalog__item_opaque');
-        }
-
-        if (!showHidden) {
-            catalogItem.classList.add('catalog__item_invisible');
-        }
+        toggleOpacityAndVisibility(catalogItem);
     });
 });
 
@@ -121,7 +137,7 @@ function filterItemsByActiveButton() {
                         toggleItemVisibility(item);
                     } else {
                         item.classList.add('catalog__item_invisible');
-                    } 
+                    }
                     break;
             }
         });
@@ -135,5 +151,33 @@ function toggleItemVisibility(item) {
         item.classList.add('catalog__item_invisible');
     } else {
         item.classList.remove('catalog__item_invisible');
+    }
+}
+
+function activateIcons(array, iconClass, isHidden) {
+    array.forEach(function (item) {
+        let catalogItem = document.getElementById(item);
+        let icon = catalogItem.querySelector(iconClass);
+        let elementArray = [icon, icon.children[0]];
+
+        elementArray.forEach(function (element) {
+            element.classList.add('catalog__item-content-icon_active');
+        });
+
+        if (isHidden) {
+            toggleOpacityAndVisibility(catalogItem);
+        }
+    });
+}
+
+function toggleOpacityAndVisibility(catalogItem) {
+    if (catalogItem.classList.contains('catalog__item_opaque')) {
+        catalogItem.classList.remove('catalog__item_opaque');
+    } else {
+        catalogItem.classList.add('catalog__item_opaque');
+    }
+
+    if (!showHidden) {
+        catalogItem.classList.add('catalog__item_invisible');
     }
 }
