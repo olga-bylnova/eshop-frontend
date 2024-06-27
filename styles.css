@@ -29,6 +29,14 @@ input {
     position: relative;
 }
 
+.catalog__item_opaque {
+    opacity: 0.5;
+}
+
+.catalog__item_invisible {
+    display: none;
+}
+
 .catalog__item-content {
     margin: 20px;
     background-color: #fff;
@@ -98,7 +106,7 @@ input {
     opacity: 1;
 }
 
-.catalog__item-cart-button:hover {
+.catalog__item-cart-button:hover, .filter-button:hover {
     background-color: #5b92bc;
 }
 
@@ -133,6 +141,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 35%;
 }
 
 .catalog__item-content-icon:hover {
@@ -145,6 +154,11 @@ input {
 }
 
 .catalog__item-content-icon_active:hover {
+    background-color: #005ce6;
+    color: #fff;
+}
+
+.catalog__item-content-icon_active:hover i {
     background-color: #005ce6;
     color: #fff;
 }
@@ -170,4 +184,25 @@ input {
     width: fit-content;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.filter {
+    column-gap: 10px;
+}
+
+.filter-button {
+    padding: 10px;
+    margin: 10px;
+    background-color: #62a2d2;
+    color: #fff;
+    border: none;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+.filter-button_active {
+    background-color: #005ce6;
+    color: #fff;
 }

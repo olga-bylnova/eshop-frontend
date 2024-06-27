@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <link href="style.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,17 +14,31 @@
 
 <body>
     <div class="main">
+        <div class="filter">
+            <div class="filter_buttons">
+                <button class="filter-button" data-filter="all">All</button>
+                <button class="filter-button" data-filter="favourites">Favourites</button>
+                <button class="filter-button" data-filter="comparison">Comparison</button>
+            </div>
+            <div>
+                <input type="checkbox" id="showHidden">
+                <label for="showHidden">Show hidden</label>
+            </div>
+        </div>
         <div class="catalog">
-            <div class="catalog__item">
+            <div class="catalog__item" id="item1">
                 <div class="catalog__item-content">
                     <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
+                        <div id="visibilityIcon1"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
                             <i class="fa-regular fa-eye"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="favouritesIcon1"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
                             <i class="fa-regular fa-heart"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="comparisonIcon1"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
                     </div>
@@ -46,78 +60,19 @@
                     <i class="fa-solid fa-bag-shopping"></i> Add to cart
                 </button>
             </div>
-            <div class="catalog__item">
+            <div class="catalog__item" id="item2">
                 <div class="catalog__item-content">
                     <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
+                        <div id="visibilityIcon2"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
                             <i class="fa-regular fa-eye"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="favouritesIcon2"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
                             <i class="fa-regular fa-heart"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                    </div>
-                    <div class="catalog__item-content-upper">
-                        <img src="images/book1.jpg" alt="Product image" class="catalog__item-img">
-                    </div>
-                    <div class="catalog__item-caption">
-                        <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
-                        <div class="catalog__item-caption-line catalog__item-rating">
-                            <div class="catalog__item-rating-stars" style="--rating: 2.5;">
-                                ★★★★★
-                            </div>
-                        </div>
-                        <span class="catalog__item-caption-line">Flared shift dress</span>
-                        <span class="catalog__item-caption-line catalog__item-caption-line-price">$124</span>
-                    </div>
-                </div>
-                <button class="catalog__item-cart-button">
-                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
-                </button>
-            </div>
-            <div class="catalog__item">
-                <div class="catalog__item-content">
-                    <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <div class="catalog__item-content-icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="catalog__item-content-icon">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                    </div>
-                    <div class="catalog__item-content-upper">
-                        <img src="images/book_cover2.jpg" alt="Product image" class="catalog__item-img">
-                    </div>
-                    <div class="catalog__item-caption">
-                        <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
-                        <div class="catalog__item-caption-line catalog__item-rating">
-                            <div class="catalog__item-rating-stars" style="--rating: 4.3;">
-                                ★★★★★
-                            </div>
-                        </div>
-                        <span class="catalog__item-caption-line">Flared shift dress</span>
-                        <span class="catalog__item-caption-line catalog__item-caption-line-price">$124</span>
-                    </div>
-                </div>
-                <button class="catalog__item-cart-button">
-                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
-                </button>
-            </div>
-            <div class="catalog__item">
-                <div class="catalog__item-content">
-                    <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <div class="catalog__item-content-icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="comparisonIcon2"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
                     </div>
@@ -139,78 +94,19 @@
                     <i class="fa-solid fa-bag-shopping"></i> Add to cart
                 </button>
             </div>
-            <div class="catalog__item">
+            <div class="catalog__item" id="item3">
                 <div class="catalog__item-content">
                     <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
+                        <div id="visibilityIcon3"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
                             <i class="fa-regular fa-eye"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="favouritesIcon3"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
                             <i class="fa-regular fa-heart"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                    </div>
-                    <div class="catalog__item-content-upper">
-                        <img src="images/book1.jpg" alt="Product image" class="catalog__item-img">
-                    </div>
-                    <div class="catalog__item-caption">
-                        <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
-                        <div class="catalog__item-caption-line catalog__item-rating">
-                            <div class="catalog__item-rating-stars" style="--rating: 2.5;">
-                                ★★★★★
-                            </div>
-                        </div>
-                        <span class="catalog__item-caption-line">Flared shift dress</span>
-                        <span class="catalog__item-caption-line catalog__item-caption-line-price">$124</span>
-                    </div>
-                </div>
-                <button class="catalog__item-cart-button">
-                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
-                </button>
-            </div>
-            <div class="catalog__item">
-                <div class="catalog__item-content">
-                    <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <div class="catalog__item-content-icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="catalog__item-content-icon">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                    </div>
-                    <div class="catalog__item-content-upper">
-                        <img src="images/book_cover2.jpg" alt="Product image" class="catalog__item-img">
-                    </div>
-                    <div class="catalog__item-caption">
-                        <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
-                        <div class="catalog__item-caption-line catalog__item-rating">
-                            <div class="catalog__item-rating-stars" style="--rating: 4.3;">
-                                ★★★★★
-                            </div>
-                        </div>
-                        <span class="catalog__item-caption-line">Flared shift dress</span>
-                        <span class="catalog__item-caption-line catalog__item-caption-line-price">$124</span>
-                    </div>
-                </div>
-                <button class="catalog__item-cart-button">
-                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
-                </button>
-            </div>
-            <div class="catalog__item">
-                <div class="catalog__item-content">
-                    <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
-                            <i class="fa-regular fa-eye"></i>
-                        </div>
-                        <div class="catalog__item-content-icon">
-                            <i class="fa-regular fa-heart"></i>
-                        </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="comparisonIcon3"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
                     </div>
@@ -232,26 +128,29 @@
                     <i class="fa-solid fa-bag-shopping"></i> Add to cart
                 </button>
             </div>
-            <div class="catalog__item">
+            <div class="catalog__item" id="item4">
                 <div class="catalog__item-content">
                     <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
+                        <div id="visibilityIcon4"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
                             <i class="fa-regular fa-eye"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="favouritesIcon4"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
                             <i class="fa-regular fa-heart"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="comparisonIcon4"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
                     </div>
                     <div class="catalog__item-content-upper">
-                        <img src="images/book1.jpg" alt="Product image" class="catalog__item-img">
+                        <img src="images/book_cover2.jpg" alt="Product image" class="catalog__item-img">
                     </div>
                     <div class="catalog__item-caption">
                         <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
                         <div class="catalog__item-caption-line catalog__item-rating">
-                            <div class="catalog__item-rating-stars" style="--rating: 2.5;">
+                            <div class="catalog__item-rating-stars" style="--rating: 4.5;">
                                 ★★★★★
                             </div>
                         </div>
@@ -263,16 +162,19 @@
                     <i class="fa-solid fa-bag-shopping"></i> Add to cart
                 </button>
             </div>
-            <div class="catalog__item">
+            <div class="catalog__item" id="item5">
                 <div class="catalog__item-content">
                     <div class="catalog__item-content-icons">
-                        <div class="catalog__item-content-icon catalog__item-content-icon_active">
+                        <div id="visibilityIcon5"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
                             <i class="fa-regular fa-eye"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="favouritesIcon5"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
                             <i class="fa-regular fa-heart"></i>
                         </div>
-                        <div class="catalog__item-content-icon">
+                        <div id="comparisonIcon5"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
                             <i class="fa-solid fa-scale-balanced"></i>
                         </div>
                     </div>
@@ -282,7 +184,143 @@
                     <div class="catalog__item-caption">
                         <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
                         <div class="catalog__item-caption-line catalog__item-rating">
-                            <div class="catalog__item-rating-stars" style="--rating: 4.3;">
+                            <div class="catalog__item-rating-stars" style="--rating: 4.5;">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <span class="catalog__item-caption-line">Flared shift dress</span>
+                        <span class="catalog__item-caption-line catalog__item-caption-line-price">$124</span>
+                    </div>
+                </div>
+                <button class="catalog__item-cart-button">
+                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
+                </button>
+            </div>
+            <div class="catalog__item" id="item6">
+                <div class="catalog__item-content">
+                    <div class="catalog__item-content-icons">
+                        <div id="visibilityIcon6"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
+                            <i class="fa-regular fa-eye"></i>
+                        </div>
+                        <div id="favouritesIcon6"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div id="comparisonIcon6"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                    </div>
+                    <div class="catalog__item-content-upper">
+                        <img src="images/book_cover2.jpg" alt="Product image" class="catalog__item-img">
+                    </div>
+                    <div class="catalog__item-caption">
+                        <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
+                        <div class="catalog__item-caption-line catalog__item-rating">
+                            <div class="catalog__item-rating-stars" style="--rating: 4.5;">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <span class="catalog__item-caption-line">Flared shift dress</span>
+                        <span class="catalog__item-caption-line catalog__item-caption-line-price">$124</span>
+                    </div>
+                </div>
+                <button class="catalog__item-cart-button">
+                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
+                </button>
+            </div>
+            <div class="catalog__item" id="item7">
+                <div class="catalog__item-content">
+                    <div class="catalog__item-content-icons">
+                        <div id="visibilityIcon8"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
+                            <i class="fa-regular fa-eye"></i>
+                        </div>
+                        <div id="favouritesIcon7"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div id="comparisonIcon8"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                    </div>
+                    <div class="catalog__item-content-upper">
+                        <img src="images/book_cover2.jpg" alt="Product image" class="catalog__item-img">
+                    </div>
+                    <div class="catalog__item-caption">
+                        <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
+                        <div class="catalog__item-caption-line catalog__item-rating">
+                            <div class="catalog__item-rating-stars" style="--rating: 4.5;">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <span class="catalog__item-caption-line">Flared shift dress</span>
+                        <span class="catalog__item-caption-line catalog__item-caption-line-price">$124</span>
+                    </div>
+                </div>
+                <button class="catalog__item-cart-button">
+                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
+                </button>
+            </div>
+            <div class="catalog__item" id="item8">
+                <div class="catalog__item-content">
+                    <div class="catalog__item-content-icons">
+                        <div id="visibilityIcon8"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
+                            <i class="fa-regular fa-eye"></i>
+                        </div>
+                        <div id="favouritesIcon8"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div id="comparisonIcon8"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                    </div>
+                    <div class="catalog__item-content-upper">
+                        <img src="images/book_cover2.jpg" alt="Product image" class="catalog__item-img">
+                    </div>
+                    <div class="catalog__item-caption">
+                        <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
+                        <div class="catalog__item-caption-line catalog__item-rating">
+                            <div class="catalog__item-rating-stars" style="--rating: 4.5;">
+                                ★★★★★
+                            </div>
+                        </div>
+                        <span class="catalog__item-caption-line">Flared shift dress</span>
+                        <span class="catalog__item-caption-line catalog__item-caption-line-price">$124</span>
+                    </div>
+                </div>
+                <button class="catalog__item-cart-button">
+                    <i class="fa-solid fa-bag-shopping"></i> Add to cart
+                </button>
+            </div>
+            <div class="catalog__item" id="item9">
+                <div class="catalog__item-content">
+                    <div class="catalog__item-content-icons">
+                        <div id="visibilityIcon9"
+                            class="catalog__item-content-icon catalog__item-content-icon-visibility">
+                            <i class="fa-regular fa-eye"></i>
+                        </div>
+                        <div id="favouritesIcon9"
+                            class="catalog__item-content-icon catalog__item-content-icon-favourites">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                        <div id="comparisonIcon9"
+                            class="catalog__item-content-icon catalog__item-content-icon-comparison">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                    </div>
+                    <div class="catalog__item-content-upper">
+                        <img src="images/book_cover2.jpg" alt="Product image" class="catalog__item-img">
+                    </div>
+                    <div class="catalog__item-caption">
+                        <span class="catalog__item-caption-line catalog__item-caption-line-category">T-shirts</span>
+                        <div class="catalog__item-caption-line catalog__item-rating">
+                            <div class="catalog__item-rating-stars" style="--rating: 4.5;">
                                 ★★★★★
                             </div>
                         </div>
@@ -296,4 +334,5 @@
             </div>
         </div>
     </div>
+    <script src="filterItems.js"></script>
 </body>
